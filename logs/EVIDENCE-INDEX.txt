@@ -1,0 +1,70 @@
+AWS CLOUD SECURITY AND EVENT-DRIVEN AUTO-REMEDIATION
+Evidence Index
+Environment: LocalStack Community 4.8.1
+Region: us-east-1
+
+1. TERRAFORM SECURITY CONFIGURATION
+   Source: terraform/main.tf
+   State: terraform-managed security group and network interface.
+   Security group: sg-10e38527763609f3c
+   Inbound rules: none.
+   Outbound rule: TCP 443 to 0.0.0.0/0.
+
+2. CHECKOV INFRASTRUCTURE-AS-CODE SCAN
+   Evidence: logs/checkov-final-evidence.txt
+   Result: 8 passed, 0 failed, 0 skipped.
+
+3. PROWLER INFRASTRUCTURE-AS-CODE SCAN
+   Evidence: logs/prowler-iac/prowler-iac-final.html
+   Result: 70 passed, 1 failed.
+   Finding: AWS-0104 — unrestricted outbound destination CIDR.
+   Note: The configured egress is TCP 443 only, but permits any IPv4 destination.
+
+4. PROWLER LOCALSTACK AWS SCAN
+   Evidence: logs/prowler-localstack/prowler-output-000000000000-20261011221712.asff.json
+   Note: This scan targeted LocalStack's emulated account, not a live AWS account.
+
+5. LAMBDA REMEDIATION TEST
+   Response: tests/lambda-invoke-response.json
+   Test event: tests/lambda-test-event.json
+   Test code: tests/test_remediation.py
+   Result: Lambda reported successful revocation of public TCP port 22.
+
+6. EVENTBRIDGE END-TO-END TEST
+   Evidence: logs/eventbridge-test-evidence.txt
+   Rule: remediate-public-ssh-rule
+   Function: remediate-public-ssh
+   Result: PASS in LocalStack using a synthetic event.
+   Postcondition: test security group's ingress rules were empty.
+   Limitation: the event was synthetic, not a genuine CloudTrail record.
+
+7. CHECKOV RAW SCAN LOG
+   Evidence: logs/checkov-scan.txt
+   Note: Checkov reported an SSL certificate-verification warning while
+   attempting to retrieve optional guideline mappings. The recorded scan
+   result was 8 passed, 0 failed, 0 skipped.
+
+8. AUTOMATED REMEDIATION REGRESSION TEST
+   Evidence: logs/remediation-test-evidence.txt
+   Test code: tests/test_remediation.py
+   Result: PASS — public TCP port 22 from 0.0.0.0/0 was present before
+   remediation and absent afterward.
+
+9. S3 ACCESS-LOGS LIFECYCLE VERIFICATION
+   Evidence: logs/access-logs-lifecycle-verified.json
+   Result: Verified in LocalStack.
+   Retention: Objects expire after 90 days.
+   Cleanup: Incomplete multipart uploads are aborted after 7 days.
+   Status: Lifecycle rule enabled; filter applies to all objects in the
+   dedicated access-logs bucket.
+
+10. CURRENT CHECKOV HARDENING SCAN
+    Raw evidence: logs/checkov-current-final.txt
+    Summary: logs/checkov-current-final-summary.txt
+    Result: 35 passed, 5 failed, 0 skipped.
+    Outstanding findings: missing access-logs bucket event notifications,
+    cross-region replication on both buckets, and KMS default encryption
+    on both buckets.
+    Note: LocalStack lab results; not a production AWS compliance
+    certification. The scan completed despite an optional guideline
+    retrieval SSL warning.

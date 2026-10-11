@@ -1,0 +1,1 @@
+{"status": "remediated", "group_id": "sg-612b4c3f3a7636384", "revoked_rules": [{"protocol": "tcp", "from_port": 22, "to_port": 22, "cidr": "0.0.0.0/0"}], "message": "Public SSH ingress revoked."}

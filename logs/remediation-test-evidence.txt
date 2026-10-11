@@ -1,0 +1,18 @@
+TEST 1: Added temporary public SSH rule.
+TEST 2: Public SSH rule present before remediation: True
+TEST 3: Remediation result:
+{
+  "status": "remediated",
+  "group_id": "sg-612b4c3f3a7636384",
+  "revoked_rules": [
+    {
+      "protocol": "tcp",
+      "from_port": 22,
+      "to_port": 22,
+      "cidr": "0.0.0.0/0"
+    }
+  ],
+  "message": "Public SSH ingress revoked."
+}
+TEST 4: Public SSH rule present after remediation: False
+PASS: Public SSH rule was successfully remediated.

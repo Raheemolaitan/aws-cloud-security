@@ -1,0 +1,45 @@
+.venv/
+__pycache__/
+*.py[cod]
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform/.terraform.lock.hcl
+.env
+.DS_Store
+.localstack/
+
+# Additional local environments
+.prowler-venv/
+venv/
+.venv-*/
+
+# Secrets and local AWS credentials
+.aws/
+*.pem
+*.key
+secrets/
+credentials
+
+# Generated Terraform and security scan artifacts
+crash.log
+crash.*.log
+*.tfvars
+!terraform/example.tfvars
+
+# Terraform local state, plans, backups, and provider lock file
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/tfplan*
+terraform/main.tf.backup
+terraform/.terraform.lock.hcl
+
+# Python and generated Lambda package
+__pycache__/
+*.py[cod]
+lambda/remediate_public_ssh.zip
+
+# Downloaded Trivy artifacts
+tools/trivy/trivy
+tools/trivy/trivy.tar.gz

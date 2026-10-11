@@ -1,0 +1,20 @@
+CURRENT CHECKOV SCAN
+Date: 2026-10-12
+Framework: Terraform
+Tool: Checkov 3.3.27
+Raw output: logs/checkov-current-final.txt
+
+Passed checks: 35
+Failed checks: 5
+Skipped checks: 0
+
+Outstanding findings:
+- CKV2_AWS_62: Event notifications missing on the access-logs bucket.
+- CKV_AWS_144: Cross-region replication missing on both S3 buckets.
+- CKV_AWS_145: KMS default encryption missing on both S3 buckets.
+
+Verified alternative control: both buckets use AES-256 SSE-S3 encryption.
+Environment limitation: LocalStack KMS service is not enabled.
+The scan completed despite an SSL warning during optional online
+guideline retrieval. These are local Terraform scan results, not a
+production AWS compliance certification.

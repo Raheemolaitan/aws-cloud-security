@@ -1,0 +1,9 @@
+{
+  "source": "aws.ec2",
+  "detail": {
+    "eventName": "AuthorizeSecurityGroupIngress",
+    "requestParameters": {
+      "groupId": "sg-612b4c3f3a7636384"
+    }
+  }
+}

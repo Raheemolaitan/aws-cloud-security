@@ -1,0 +1,22 @@
+Project: AWS Cloud Security and Event-Driven Auto-Remediation
+Environment: LocalStack Community 4.8.1
+Region: us-east-1
+
+Test: EventBridge-triggered public SSH remediation
+Test security group: sg-612b4c3f3a7636384
+EventBridge rule: remediate-public-ssh-rule
+Lambda function: remediate-public-ssh
+Synthetic EventBridge event ID: dea689fd-c1ea-4e9e-b6de-19873a173fae
+
+Precondition:
+A temporary TCP port 22 ingress rule from 0.0.0.0/0 was added to the test security group.
+
+Event publication:
+FailedEntryCount = 0
+
+Postcondition:
+The security group's ingress permissions returned an empty array ([]).
+
+Result:
+PASS — the synthetic event triggered automatic removal of the public SSH ingress rule.
+Note: This was a LocalStack simulation using a synthetic event, not a genuine CloudTrail record.
