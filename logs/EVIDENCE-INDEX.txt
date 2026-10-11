@@ -21,8 +21,10 @@ Region: us-east-1
    Note: The configured egress is TCP 443 only, but permits any IPv4 destination.
 
 4. PROWLER LOCALSTACK AWS SCAN
-   Evidence: logs/prowler-localstack/prowler-output-000000000000-20261011221712.asff.json
-   Note: This scan targeted LocalStack's emulated account, not a live AWS account.
+   Summary: logs/prowler-localstack/SUMMARY.txt
+   Raw evidence: logs/prowler-localstack/prowler-output-000000000000-20261011221712.asff.json
+   Results: 1,160 records; 591 passed; 569 failed.
+   Limitation: LocalStack emulation only; these results do not establish production AWS compliance.
 
 5. LAMBDA REMEDIATION TEST
    Response: tests/lambda-invoke-response.json

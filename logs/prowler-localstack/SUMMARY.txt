@@ -1,0 +1,18 @@
+PROWLER LOCALSTACK SCAN SUMMARY
+Project: AWS Cloud Security and Event-Driven Auto-Remediation
+Environment: LocalStack Community 4.8.1
+Target account: 000000000000 (emulated LocalStack account)
+Source export: prowler-output-000000000000-20261011221712.asff.json
+
+Results:
+- Total records: 1,160
+- Passed: 591
+- Failed: 569
+
+Limitations:
+This scan targeted an emulated LocalStack environment, not a live AWS
+account. Some checks may fail because LocalStack does not implement the
+AWS service or behavior being tested. These results are not proof of
+production AWS compliance.
+
+The original JSON export is retained locally as supporting evidence.
