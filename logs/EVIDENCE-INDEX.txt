@@ -68,3 +68,18 @@ Region: us-east-1
     Note: LocalStack lab results; not a production AWS compliance
     certification. The scan completed despite an optional guideline
     retrieval SSL warning.
+
+11. DETAILED CHECKOV HARDENING EVIDENCE
+    Raw report: logs/checkov-final-hardening.txt
+    Detailed summary: logs/checkov-final-summary.txt
+    Result: 35 passed, 5 failed, 0 skipped.
+    Outstanding findings: CKV2_AWS_62, CKV_AWS_144, and CKV_AWS_145.
+    Note: LocalStack/Terraform lab results, not production AWS compliance.
+
+12. PROWLER IAC FINAL REPORT
+    Report: logs/prowler-iac/prowler-iac-final.html
+    Result: 70 passed, 1 failed, 0 muted.
+    Finding: AWS-0104 — outbound TCP 443 allows any IPv4 destination.
+    Note: The rule is restricted to TCP port 443; destination CIDR
+    restriction remains a hardening opportunity.
+

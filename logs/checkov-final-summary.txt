@@ -1,0 +1,32 @@
+CHECKOV FINAL HARDENING SUMMARY
+Project: AWS Cloud Security and Event-Driven Auto-Remediation
+Environment: LocalStack Community 4.8.1
+Scan framework: Terraform
+Evidence source: logs/checkov-final-hardening.txt
+
+RESULTS
+Passed checks: 35
+Failed checks: 5
+Skipped checks: 0
+
+REMAINING FINDINGS
+1. CKV2_AWS_62 — Event notifications are not configured for the
+   dedicated access-logs bucket. The evidence bucket has EventBridge
+   notifications configured. The access-logs bucket notification finding
+   is retained because no separate event-handling use case is required
+   for this lab.
+
+2. CKV_AWS_144 — Cross-region replication is not configured for either
+   S3 bucket. Treat this as a production resilience improvement requiring
+   a suitable destination region, replication permissions, and supporting
+   bucket configuration.
+
+3. CKV_AWS_145 — KMS default encryption is not configured for either
+   S3 bucket. Both buckets have AES-256 SSE-S3 encryption verified in
+   LocalStack. KMS was unavailable because the LocalStack KMS service
+   was not enabled in this lab.
+
+LIMITATIONS
+These results describe a Terraform scan and an emulated LocalStack
+environment. They do not establish production AWS compliance.
+The remaining findings have not been suppressed.

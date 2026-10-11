@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <style>
+        .read-more {color: #00f;}
+
+        .bg-success-custom {background-color: #98dea7 !important;}
+
+        .bg-danger {background-color: #f28484 !important;}
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- https://datatables.net/download/index with jQuery, DataTables, Buttons, SearchPanes, and Select //-->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.25/b-1.7.1/sp-1.4.0/sl-1.3.3/datatables.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <style>
+        .show-read-more .more-text {display: none;}
+
+        .dataTable {font-size: 14px;}
+
+        .container-fluid {font-size: 14px;}
+
+        .float-left { float: left !important; max-width: 100%; }
+    </style>
+    <title>Prowler - The Handy Cloud Security Tool</title>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="row mt-3">
+        <div class="col-md-4">
+            <a href="https://github.com/prowler-cloud/prowler/"><img class="float-left card-img-left mt-4 mr-4 ml-4"
+                        src=https://raw.githubusercontent.com/prowler-cloud/prowler/dc7d2d5aeb92fdf12e8604f42ef6472cd3e8e889/docs/img/prowler-logo-black.png
+                        alt="prowler-logo"
+                        style="width: 15rem; height:auto;"/></a>
+            <div class="card">
+            <div class="card-header">
+                Report Information
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-auto">
+                    <b>Version:</b> 5.37.1
+                    </div>
+                </div>
+                </li>
+                <li class="list-group-item">
+                <b>Parameters used:</b> iac --scan-path terraform --scanners misconfig secret --output-formats html --output-directory logs/prowler-iac --no-banner
+                </li>
+                <li class="list-group-item">
+                <b>Date:</b> 2026-10-11T22:28:44.125998
+                </li>
+            </ul>
+            </div>
+        </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <div class="card-header">
+                            IAC Assessment Summary
+                        </div>
+                        <ul class="list-group
+                        list-group-flush">
+                            <li class="list-group-item">
+                                <b>IAC path:</b> terraform
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            IAC Credentials
+                        </div>
+                        <ul class="list-group
+                        list-group-flush">
+                            <li class="list-group-item">
+                                <b>IAC authentication method:</b> No auth
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="col-md-2">
+            <div class="card">
+                <div class="card-header">
+                    Assessment Overview
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <b>Total Findings:</b> 71
+                    </li>
+                    <li class="list-group-item">
+                        <b>Passed:</b> 70
+                    </li>
+                    <li class="list-group-item">
+                        <b>Passed (Muted):</b> 0
+                    </li>
+                    <li class="list-group-item">
+                        <b>Failed:</b> 1
+                    </li>
+                    <li class="list-group-item">
+                        <b>Failed (Muted):</b> 0
+                    </li>
+                    <li class="list-group-item">
+                        <b>Total Resources:</b> 2
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="row-mt-3">
+        <div class="col-md-12">
+            <table class="table compact stripe row-border ordering" id="findingsTable" data-order='[[ 5, "asc" ]]' data-page-length='100'>
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Status</th>
+                    <th scope="col">Severity</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Region</th>
+                    <th style="width:20%" scope="col">Check ID</th>
+                    <th style="width:20%" scope="col">Check Title</th>
+                    <th scope="col">Resource ID</th>
+                    <th scope="col">Resource Tags</th>
+                    <th scope="col">Status Extended</th>
+                    <th scope="col">Risk</th>
+                    <th scope="col">Recommendation</th>
+                    <th scope="col">Compliance</th>
+                </tr>
+            </thead>
+            <tbody>
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0008</td>
+                            <td>Launch configuration with unencrypted block device.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Turn on encryption for all block devices</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0008"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0009</td>
+                            <td>Launch configuration should not have a public IP address.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set the instance to not be publicly accessible</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0009"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0019</td>
+                            <td>Config configuration aggregator should be using all regions for source</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set the aggregator to cover all regions</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0019"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0026</td>
+                            <td>EBS volumes must be encrypted</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable encryption of EBS volumes</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0026"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0027</td>
+                            <td>EBS volume encryption should use Customer Managed Keys</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable encryption using customer managed keys</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0027"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0028</td>
+                            <td>aws_instance should activate session tokens for Instance Metadata Service.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable HTTP token requirement for IMDS</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0028"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0029</td>
+                            <td>User data for EC2 instances must not contain sensitive AWS keys</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Remove sensitive data from the EC2 instance user-data</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0029"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0056</td>
+                            <td>IAM Password policy should prevent password reuse.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Prevent password reuse in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0056"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0058</td>
+                            <td>IAM Password policy should have requirement for at least one lowercase character.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce longer, more complex passwords in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0058"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0059</td>
+                            <td>IAM Password policy should have requirement for at least one number in the password.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce longer, more complex passwords in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0059"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0060</td>
+                            <td>IAM Password policy should have requirement for at least one symbol in the password.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce longer, more complex passwords in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0060"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0061</td>
+                            <td>IAM Password policy should have requirement for at least one uppercase character.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce longer, more complex passwords in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0061"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0062</td>
+                            <td>IAM Password policy should have expiry less than or equal to 90 days.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Limit the password duration with an expiry in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0062"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0063</td>
+                            <td>IAM Password policy should have minimum password length of 14 or more characters.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce longer, more complex passwords in the policy</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0063"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0099</td>
+                            <td>Missing description for security group.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Add descriptions for all security groups</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0099"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0101</td>
+                            <td>AWS best practice to not use the default VPC for workflows</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Create a non-default vpc for resources to be created in</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0101"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0102</td>
+                            <td>An Network ACL rule allows ALL ports.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set specific allowed ports</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0102"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0105</td>
+                            <td>Network ACLs should not allow unrestricted ingress to SSH or RDP from any IP address.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set a more restrictive CIDR range</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0105"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0107</td>
+                            <td>Security groups should not allow unrestricted ingress to SSH or RDP from any IP address.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set a more restrictive CIDR range</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0107"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0122</td>
+                            <td>Ensure all data stored in the launch configuration EBS is securely encrypted</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Don&#39;t use sensitive data in user data</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0122"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0123</td>
+                            <td>IAM groups should have MFA enforcement activated.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use terraform-module/enforce-mfa/aws to ensure that MFA is enforced</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0123"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0124</td>
+                            <td>Missing description for security group rule.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Add descriptions for all security groups rules</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0124"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0129</td>
+                            <td>User data for EC2 instances must not contain sensitive AWS keys</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Remove sensitive data from the EC2 instance user-data generated by launch templates</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0129"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0130</td>
+                            <td>aws_instance should activate session tokens for Instance Metadata Service.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable HTTP token requirement for IMDS</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0130"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0131</td>
+                            <td>Instance with unencrypted block device.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Turn on encryption for all block devices</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0131"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0140</td>
+                            <td>The &#34;root&#34; account has unrestricted access to all resources in the AWS account. It is highly recommended that the use of this account be avoided.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use lower privileged accounts instead, so only required privileges are available.</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0140"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0141</td>
+                            <td>The root user has complete access to all services and resources in an AWS account. AWS Access Keys provide programmatic access to a given account.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use lower privileged accounts instead, so only required privileges are available.</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0141"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0143</td>
+                            <td>IAM policies should not be granted directly to users.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Grant policies at the group level instead.</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0143"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0164</td>
+                            <td>Instances in a subnet should not receive a public IP address by default.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set the instance to not be publicly accessible</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0164"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0178</td>
+                            <td>VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. After you&#39;ve created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs. It is recommended that VPC Flow Logs be enabled for packet &#34;Rejects&#34; for VPCs.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable flow logs for VPC</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0178"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0342</td>
+                            <td>IAM Pass Role Filtering</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Resolve permission escalations by denying pass role&#39;</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0342"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0344</td>
+                            <td>AWS AMI data source should specify owners</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Specify the owners field in the AWS AMI data source configuration</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0344"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0345</td>
+                            <td>Disallow unrestricted S3 IAM Policies</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Create more restrictive S3 policies</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0345"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0346</td>
+                            <td>Reduce unnecessary unauthorized access or information disclosure of S3 buckets.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Allowing Get<em> along with Put</em> on all Resources can potentially allow unauthorized access and/or information disclosure from sensitive buckets.</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0346"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0007</td>
+                            <td>Storage containers in blob storage mode should not have public access</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Disable public access to storage containers</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0007"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0008</td>
+                            <td>Storage accounts should be configured to only accept transfers that are over secure connections</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Only allow secure connection for transferring data into storage accounts</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0008"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0009</td>
+                            <td>When using Queue Services for a storage account, logging should be enabled.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable logging for Queue Services</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0009"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0010</td>
+                            <td>Trusted Microsoft Services should have bypass access to Storage accounts</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Allow Trusted Microsoft Services to bypass</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0010"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0011</td>
+                            <td>The minimum TLS version for Storage Accounts should be TLS1_2 or higher</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use a more recent TLS version for the storage account</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0011"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0012</td>
+                            <td>The default action on Storage account network rules should be set to deny</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set network rules to deny</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0012"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0056</td>
+                            <td>Storage account should have blob soft delete enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable soft delete for blobs with an appropriate retention period</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0056"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0057</td>
+                            <td>Storage account should have logging enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable logging for at least one storage service (Queue, Table, or Blob)</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0057"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0058</td>
+                            <td>Storage account should use geo-redundant replication</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Configure storage account to use geo-redundant replication (GRS, RAGRS, GZRS, or RAGZRS)</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0058"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0059</td>
+                            <td>Storage account should have secure transfer and minimum TLS version configured</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable secure transfer and set minimum TLS version to TLS1_2 or higher</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0059"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0060</td>
+                            <td>Storage account should use customer-managed keys for encryption</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Configure customer-managed keys for storage account encryption</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0060"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AZU-0061</td>
+                            <td>Storage account should have infrastructure encryption enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable infrastructure encryption for storage account</p> <a class="read-more" href="https://hub.prowler.com/check/AZU-0061"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0027</td>
+                            <td>A firewall rule should not allow unrestricted ingress from any IP address.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set a more restrictive cidr range</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0027"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0029</td>
+                            <td>VPC flow logs should be enabled for all subnetworks</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable VPC flow logs</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0029"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0030</td>
+                            <td>Disable project-wide SSH keys for all instances</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Disable project-wide SSH keys</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0030"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0031</td>
+                            <td>Instances should not have public IP addresses</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Remove public IP</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0031"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0032</td>
+                            <td>Disable serial port connectivity for all instances</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Disable serial port access</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0032"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0033</td>
+                            <td>VM disks should be encrypted with Customer Supplied Encryption Keys</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use managed keys</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0033"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0034</td>
+                            <td>Disks should be encrypted with customer managed encryption keys</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Use managed keys to encrypt disks.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0034"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0035</td>
+                            <td>A firewall rule should not allow unrestricted egress to any IP address.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set a more restrictive cidr range</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0035"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0036</td>
+                            <td>Instances should not override the project setting for OS Login</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable OS Login at project level and remove instance-level overrides</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0036"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0037</td>
+                            <td>The encryption key used to encrypt a compute disk has been specified in plaintext.</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Reference a managed key rather than include the key in raw format.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0037"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0039</td>
+                            <td>SSL policies should enforce secure versions of TLS</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enforce a minimum TLS version of 1.2</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0039"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0041</td>
+                            <td>Instances should have Shielded VM VTPM enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable Shielded VM VTPM</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0041"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0042</td>
+                            <td>OS Login should be enabled at project level</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable OS Login at project level</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0042"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0043</td>
+                            <td>Instances should not have IP forwarding enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Disable IP forwarding</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0043"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0044</td>
+                            <td>Instances should not use the default service account</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Remove use of default service account</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0044"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0045</td>
+                            <td>Instances should have Shielded VM integrity monitoring enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable Shielded VM Integrity Monitoring</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0045"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0067</td>
+                            <td>Instances should have Shielded VM secure boot enabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable Shielded VM secure boot</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0067"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>high</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0070</td>
+                            <td>RDP Access Is Not Restricted</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Restrict RDP (TCP port 3389) ingress in firewall rules. Only allow trusted IP ranges or use Identity-Aware Proxy for RDP access.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0070"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0071</td>
+                            <td>SSH Access Is Not Restricted</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Restrict SSH (TCP port 22) access in firewall rules to known IP addresses or ranges. Avoid open 0.0.0.0/0 access for SSH.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0071"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0072</td>
+                            <td>Google Compute Network Using Firewall Rule that Allows All Ports</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Modify firewall rules that allow all ports to restrict to only required ports. Use separate rules for specific port ranges as needed, instead of a single overly broad rule.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0072"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0073</td>
+                            <td>Disable Default Firewall Rules</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Replace default firewall rules with custom, more restrictive rules appropriate for your security requirements</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0073"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0074</td>
+                            <td>Google Compute Network Using Firewall Rule that Allows Large Port Range</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Limit firewall rules to necessary port ranges only. If a wide range is specified, consider splitting into smaller ranges or specific ports needed for your application.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0074"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>low</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0075</td>
+                            <td>Google Compute Subnetwork with Private Google Access Disabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable Private Google Access on subnets. In Terraform, set <code>private_ip_google_access = true</code> in the <code>google_compute_subnetwork</code> resource.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0075"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="p-3 mb-2 bg-success-custom">
+                            <td>PASS</td>
+                            <td>medium</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>GCP-0076</td>
+                            <td>Google Compute Subnetwork Logging Disabled</td>
+                            <td>.</td>
+                            <td></td>
+                            <td>No issues found</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Enable VPC Flow Logs for subnets.</p> <a class="read-more" href="https://hub.prowler.com/check/GCP-0076"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+                        <tr class="table-danger">
+                            <td>FAIL</td>
+                            <td>critical</td>
+                            <td>terraformplan-snapshot</td>
+                            <td>branch</td>
+                            <td>AWS-0104</td>
+                            <td>A security group rule should not allow unrestricted egress to any IP address.</td>
+                            <td>main.tf</td>
+                            <td></td>
+                            <td>Security group rule allows unrestricted egress to any IP address.</td>
+                            <td><p class="show-read-more">This provider has not defined a risk for this check.</p></td>
+                            <td><p class="show-read-more">Set a more restrictive cidr range</p> <a class="read-more" href="https://hub.prowler.com/check/AWS-0104"><i class="fas fa-external-link-alt"></i></a></td>
+                            <td><p class="show-read-more"></p></td>
+                        </tr>
+                        
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Table search and paginator -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+        integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+        crossorigin="anonymous"></script>
+    <!-- https://datatables.net/download/index with jQuery, DataTables, Buttons, SearchPanes, and Select //-->
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.25/b-1.7.1/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialise the table with 50 rows, and some search/filtering panes
+            $('#findingsTable').DataTable({
+                responsive: true,
+                // Show 25, 50, 100 and All records
+                lengthChange: true,
+                lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
+                searchPanes: {
+                    cascadePanes: true,
+                    viewTotal: true,
+                },
+                dom: 'Blfrtip',
+                language: {
+                    // To enable a filter button instead of the filter row
+                    searchPanes: {
+                        clearMessage: 'Clear Filters',
+                        collapse: { 0: 'Filters', _: 'Filters (%d)' },
+                        initCollapsed: true
+
+                    }
+                },
+                buttons: [
+                    {
+                        extend: 'searchPanes',
+                        config: {
+                            cascadePanes: true,
+                            viewTotal: true,
+                            orderable: false
+                        }
+                    }
+                ],
+                columnDefs: [
+                    {
+                        searchPanes: {
+                            show: true,
+                            pagingType: 'numbers',
+                            searching: true
+                        },
+                        // Show all filters
+                        targets: [0, 1, 2, 3, 5, 7]
+                    }
+                ]
+            });
+            var maxLength = 30;
+            // ReadMore ReadLess
+            $(".show-read-more").each(function () {
+                var myStr = $(this).html();
+                var textLength = $(this).text().length;
+                if (textLength > maxLength) {
+                    // Find the position where to cut while preserving HTML tags and breaking at word boundaries
+                    var cutPosition = 0;
+                    var currentLength = 0;
+                    var inTag = false;
+                    var lastWordBoundary = 0;
+                    var tagStack = [];
+
+                    for (var i = 0; i < myStr.length; i++) {
+                        if (myStr[i] === '<') {
+                            inTag = true;
+                            // Track opening tags
+                            if (myStr[i + 1] !== '/') {
+                                var tagEnd = myStr.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    var tagName = myStr.substring(i + 1, tagEnd).split(' ')[0];
+                                    tagStack.push(tagName);
+                                }
+                            } else {
+                                // Closing tag
+                                var tagEnd = myStr.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    var tagName = myStr.substring(i + 2, tagEnd).split(' ')[0];
+                                    if (tagStack.length > 0) {
+                                        tagStack.pop();
+                                    }
+                                }
+                            }
+                        } else if (myStr[i] === '>') {
+                            inTag = false;
+                        } else if (!inTag) {
+                            currentLength++;
+                            // Only consider word boundaries if we're not inside any HTML tags
+                            if (tagStack.length === 0 && (myStr[i] === ' ' || myStr[i] === '.' || myStr[i] === ',' || myStr[i] === ';' || myStr[i] === ':' || myStr[i] === '!' || myStr[i] === '?')) {
+                                lastWordBoundary = i + 1;
+                            }
+
+                            if (currentLength >= maxLength) {
+                                // If we're inside HTML tags, find the next closing tag
+                                if (tagStack.length > 0) {
+                                    // Find the next closing tag for the current open tag
+                                    var nextClosingTag = '</' + tagStack[tagStack.length - 1] + '>';
+                                    var closingTagPos = myStr.indexOf(nextClosingTag, i);
+                                    if (closingTagPos !== -1) {
+                                        cutPosition = closingTagPos + nextClosingTag.length;
+                                    } else {
+                                        // If no closing tag found, use current position
+                                        cutPosition = i + 1;
+                                    }
+                                } else {
+                                    // Use the last word boundary if available, otherwise use current position
+                                    cutPosition = lastWordBoundary > 0 ? lastWordBoundary : i + 1;
+                                }
+                                break;
+                            }
+                        }
+                    }
+
+                    var newStr = myStr.substring(0, cutPosition);
+                    var removedStr = myStr.substring(cutPosition);
+                    $(this).empty().html(newStr);
+                    $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+                    $(this).append('<span class="more-text">' + removedStr + '</span>');
+                }
+            });
+            $(".read-more").click(function () {
+                $(this).siblings(".more-text").contents().unwrap();
+                $(this).remove();
+            });
+        });
+    </script>
+</body>
+
+</html>
