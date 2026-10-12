@@ -40,3 +40,14 @@ lambda/remediate_public_ssh.zip
 # Downloaded Trivy artifacts
 tools/trivy/trivy
 tools/trivy/trivy.tar.gz
+# Intermediate Checkov scan outputs
+/logs/checkov-access-logging-lifecycle.txt
+/logs/checkov-access-logging.txt
+/logs/checkov-lifecycle-detail.json
+/logs/checkov-s3-final.txt
+/logs/checkov-scan.txt
+/logs/s3-buckets-before-kms.json
+
+# Duplicate Prowler report and raw LocalStack scan output
+/logs/prowler-iac/prowler-output-iac-20261011222844.html
+/logs/prowler-localstack/prowler-output-000000000000-20261011221712.asff.json
