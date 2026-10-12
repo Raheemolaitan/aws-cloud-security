@@ -5,7 +5,7 @@ __pycache__/
 *.tfstate
 *.tfstate.*
 *.tfplan
-terraform/.terraform.lock.hcl
+
 .env
 .DS_Store
 .localstack/
@@ -33,7 +33,6 @@ terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/tfplan*
 terraform/main.tf.backup
-terraform/.terraform.lock.hcl
 
 # Python and generated Lambda package
 __pycache__/
