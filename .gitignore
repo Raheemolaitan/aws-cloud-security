@@ -28,15 +28,13 @@ crash.*.log
 *.tfvars
 !terraform/example.tfvars
 
-# Terraform local state, plans, backups, and provider lock file
+# Terraform local state, plans, and backups.
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/tfplan*
 terraform/main.tf.backup
 
 # Python and generated Lambda package
-__pycache__/
-*.py[cod]
 lambda/remediate_public_ssh.zip
 
 # Downloaded Trivy artifacts
